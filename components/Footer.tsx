@@ -1,7 +1,5 @@
 export const Footer = () => {
-  const correntYear =
-    Temporal.Now.zonedDateTimeISO(Temporal.TimeZone.from("Asia/Tokyo"))
-      .toPlainDate().year;
+  const correntYear = new Date().getFullYear();
 
   return (
     <footer>

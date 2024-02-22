@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net=0.0.0.0:8000 --watch --unstable-temporal main.tsx",
+    "dev": "deno run --allow-net=0.0.0.0:8000 --watch main.tsx",
     "check": "deno fmt --check && deno lint && deno check **/*.tsx"
   },
   "imports": {
