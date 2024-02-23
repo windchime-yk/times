@@ -17,16 +17,45 @@ export const Layout = (props: LayoutProps) => {
     display: grid;
     grid-template-rows: auto 1fr auto;
   `;
+  const mainStyle = css`
+    max-width: 800px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  `
 
   return (
     <html lang="ja">
       <head>
-        <Style />
+        <Style>
+          {
+            css`
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }
+              html {
+                background-color: rgb(30 41 59 / 1);
+              }
+              h1,
+              h2,
+              li,
+              p,
+              a {
+                color: rgb(248 250 252 / 1);
+              }
+              
+            `
+          }
+        </Style>
         <title>{title ? `${title} | ${SITE_TITLE}` : SITE_TITLE}</title>
       </head>
       <body class={bodyStyle}>
         <Header title={SITE_TITLE} />
-        <main>{children}</main>
+        <main class={mainStyle}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
